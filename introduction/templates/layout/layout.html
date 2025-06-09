@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Personal Manager{% endblock %}</title>
+  {% block css%}{% endblock %}
+  <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="{% url 'money' %}"><span class="icon">💰</span><span class="label">Money</span></a></li>
+        <li><a href="{% url 'task' %}"><span class="icon">📚</span><span class="label">Task</span></a></li>
+        <li><a href="{% url 'trip' %}"><span class="icon">🧭</span><span class="label">Trip</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="content" id="main-content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+
+  <script src="{% static 'js/sidebar.js' %}"></script>
+</body>
+</html>

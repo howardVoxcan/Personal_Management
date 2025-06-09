@@ -1,0 +1,23 @@
+{% extends "layout/layout.html" %}
+{% load static %}
+
+{% block title %}Introduction{% endblock %}
+{% block css%}
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+{% endblock %}
+
+{% block content%}
+  <p class="blur-text"
+    data-delay="150"
+    data-animate-by="words"
+    data-direction="top"
+    data-threshold="0.2"
+    data-step-duration="0.4">
+    Hello, welcome back to your personal manager.
+  </p>
+
+  <script src="{% static 'js/components/blurText.js' %}"></script>
+{% endblock %}
